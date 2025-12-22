@@ -1,5 +1,5 @@
-const config = require("./config/config")
 const express = require("express");
+const config = require("./config/config")
 const {ConnectDB} = require("./db/db")
 const cors = require("cors")
 const cloudinary = require("cloudinary");
@@ -18,7 +18,7 @@ function Connecttoserver(){
     ConnectDB(config.DB_URI,config.DB_NAME);
     app.use(cors({
         origin : [`${config.FRONTEND_URL}`],
-        methods : ["GET", "POST","PUT","DELETE","PATCH" , "HEAD"],
+        methods : ["GET", "POST","PUT","DELETE","HEAD", "PATCH"],
         credentials : true,
     }))
     app.use(express.json());
