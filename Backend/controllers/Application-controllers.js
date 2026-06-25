@@ -3,7 +3,7 @@ const { Application } = require("../module/jobapplication.model");
 const cloudinary = require("cloudinary");
 const { errorhandler } = require("../utils/error");
 async function postApplication(req, res, next) {
-  try {
+  try{
     const { Role } = req.User;
     if (Role === "Employer") {
       return next(
